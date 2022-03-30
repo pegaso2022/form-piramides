@@ -1,0 +1,13 @@
+.container-login{
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+.line{
+    border-bottom: 1px solid #eaeaea;
+}
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid #757575;
+}
