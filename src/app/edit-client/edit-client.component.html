@@ -1,165 +1,171 @@
-<div class="col-12 d-flex justify-content-between">
-    <h2 class="fs-3 txt-black fw-bold ms-3">Editar Cliente</h2>
-    <div class="col-6 d-flex justify-content-end">
-        <label class="form-label me-1">Codigo Cliente: </label>
-        <label class="form-label fw-bold">{{data.CODCLI}}</label>
+<div class="col d-flex justify-content-center align-items-center bg-white pt-5 flex-column">
+    <div class="col-11 container-form d-flex justify-content-center align-items-center bg-white">
+        <div class="col-11">
+            <div class="col-12 d-flex justify-content-between">
+                <h2 class="fs-3 txt-black fw-bold ms-3">Editar Cliente</h2>
+                <div class="col-6 d-flex justify-content-end">
+                    <label class="form-label me-1">Codigo Cliente: </label>
+                    <label class="form-label fw-bold">{{data.CODCLI}}</label>
+                </div>
+            </div>
+            <form class="col-6 d-flex justify-content-between align-items-end mt-4">
+                <div class="col-3 col-lg-2">
+                    <label class="form-label">Tipo:</label>
+                    <select name="" id="" class="form-select">
+                        <option value="V">V</option>
+                        <option value="E">E</option>
+                        <option value="G">G</option>
+                        <option value="O">O</option>
+                    </select>
+                </div>
+                <div class="col-5">
+                    <label class="form-label">Documento:</label>
+                    <input type="number" class="form-control" placeholder="14128945">
+                </div>
+                <div class="col-4">
+                    <button type="submit"><label>Consultar</label></button>
+                </div>
+            </form>
+            <form class="col-12 d-flex justify-content-center align-items-start flex-column">
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <div class="col-1">
+                        <label class="form-label">Tipo:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.TIPOID">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Documento:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.NUMID">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Pasaporte:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.NUMPASAPORTE">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Verificación:</label>
+                        <input type="number" class="form-control" disabled="true" [value]="data.DVID">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Nombre:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.NOMTER1">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Seg. Nombre:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.NOMTER2">
+                    </div>
+                    
+                </div>
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <div class="col-2">
+                        <label class="form-label">Apellido:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.APETER1">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Seg. Apellido:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.APETER2">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Fecha de Nacimiento:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.FECNAC">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Sexo:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.APETER2">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Edo.Civil:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.EDOCIVIL">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Peso:</label>
+                        <input type="number" class="form-control" disabled="true" [value]="data.PESO">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Estatura:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.ESTATURA">
+                    </div>       
+                </div>
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <div class="col-2">
+                        <label class="form-label">Profesion:</label>
+                        <select name="" id="" class="form-select">
+                            <option value="001">Repujador</option>
+                            <option value="002">Miranda</option>
+                            <option value="003">La guaira</option>
+                            <option value="004">Barinas</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Estado:</label>
+                        <select name="" id="" class="form-select">
+                            <option value="001">Distrito Capital</option>
+                            <option value="002">Miranda</option>
+                            <option value="003">La guaira</option>
+                            <option value="004">Barinas</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Ciudad:</label>
+                        <select name="" id="" class="form-select">
+                            <option value="001">Distrito Capital</option>
+                            <option value="002">Miranda</option>
+                            <option value="003">La guaira</option>
+                            <option value="004">Barinas</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Municipio:</label>
+                        <select name="" id="" class="form-select">
+                            <option value="001">Distrito Capital</option>
+                            <option value="002">Miranda</option>
+                            <option value="003">La guaira</option>
+                            <option value="004">Barinas</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Localidad:</label>
+                        <select name="" id="" class="form-select">
+                            <option value="001">1226 - Barrio José Gregorio Hernandez</option>
+                            <option value="002">Miranda</option>
+                            <option value="003">La guaira</option>
+                            <option value="004">Barinas</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <div class="col-5">
+                        <label class="form-label">Avenida/calle:</label>
+                        <input type="text" class="form-control" [defaultValue]="data.AVENIDA">
+                    </div>
+                    <div class="col-5">
+                        <label class="form-label">Edificio/casa:</label>
+                        <input type="Text" class="form-control" [defaultValue]="data.EDIFICIO">
+                    </div>
+                    <div class="col-1">
+                        <label class="form-label">Piso:</label>
+                        <input type="Text" class="form-control" [defaultValue]="data.PISO">
+                    </div>
+                </div>
+                <div class="col-12 mt-3 d-flex justify-content-between">
+                    <div class="col-2">
+                        <label class="form-label">Correo:</label>
+                        <input type="email" class="form-control" disabled="true" [value]="data.EMAIL">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Telf. Local:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.TLFLOCAL">
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label">Telf. Móvil:</label>
+                        <input type="text" class="form-control" disabled="true" [value]="data.TLFMOVIL">
+                    </div>
+                </div>
+                <div class="col-12 mt-5 d-flex justify-content-end">
+                    <div class="col-2">
+                        <button type="submit"><label>Guardar</label></button>
+                    </div>
+                    
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-<form class="col-6 d-flex justify-content-between align-items-end mt-4">
-    <div class="col-3 col-lg-2">
-        <label class="form-label">Tipo:</label>
-        <select name="" id="" class="form-select">
-            <option value="V">V</option>
-            <option value="E">E</option>
-            <option value="G">G</option>
-            <option value="O">O</option>
-        </select>
-    </div>
-    <div class="col-5">
-        <label class="form-label">Documento:</label>
-        <input type="number" class="form-control" placeholder="14128945">
-    </div>
-    <div class="col-4">
-        <button type="submit"><label>Consultar</label></button>
-    </div>
-</form>
-<form class="col-12 d-flex justify-content-center align-items-start flex-column">
-    <div class="col-12 mt-3 d-flex justify-content-between">
-        <div class="col-1">
-            <label class="form-label">Tipo:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.TIPOID">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Documento:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.NUMID">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Pasaporte:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.NUMPASAPORTE">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Verificación:</label>
-            <input type="number" class="form-control" disabled="true" [value]="data.DVID">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Nombre:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.NOMTER1">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Seg. Nombre:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.NOMTER2">
-        </div>
-        
-    </div>
-    <div class="col-12 mt-3 d-flex justify-content-between">
-        <div class="col-2">
-            <label class="form-label">Apellido:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.APETER1">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Seg. Apellido:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.APETER2">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Fecha de Nacimiento:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.FECNAC">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Sexo:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.APETER2">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Edo.Civil:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.EDOCIVIL">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Peso:</label>
-            <input type="number" class="form-control" disabled="true" [value]="data.PESO">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Estatura:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.ESTATURA">
-        </div>       
-    </div>
-    <div class="col-12 mt-3 d-flex justify-content-between">
-        <div class="col-2">
-            <label class="form-label">Profesion:</label>
-            <select name="" id="" class="form-select">
-                <option value="001">Repujador</option>
-                <option value="002">Miranda</option>
-                <option value="003">La guaira</option>
-                <option value="004">Barinas</option>
-            </select>
-        </div>
-        <div class="col-2">
-            <label class="form-label">Estado:</label>
-            <select name="" id="" class="form-select">
-                <option value="001">Distrito Capital</option>
-                <option value="002">Miranda</option>
-                <option value="003">La guaira</option>
-                <option value="004">Barinas</option>
-            </select>
-        </div>
-        <div class="col-2">
-            <label class="form-label">Ciudad:</label>
-            <select name="" id="" class="form-select">
-                <option value="001">Distrito Capital</option>
-                <option value="002">Miranda</option>
-                <option value="003">La guaira</option>
-                <option value="004">Barinas</option>
-            </select>
-        </div>
-        <div class="col-2">
-            <label class="form-label">Municipio:</label>
-            <select name="" id="" class="form-select">
-                <option value="001">Distrito Capital</option>
-                <option value="002">Miranda</option>
-                <option value="003">La guaira</option>
-                <option value="004">Barinas</option>
-            </select>
-        </div>
-        <div class="col-2">
-            <label class="form-label">Localidad:</label>
-            <select name="" id="" class="form-select">
-                <option value="001">1226 - Barrio José Gregorio Hernandez</option>
-                <option value="002">Miranda</option>
-                <option value="003">La guaira</option>
-                <option value="004">Barinas</option>
-            </select>
-        </div>
-    </div>
-    <div class="col-12 mt-3 d-flex justify-content-between">
-        <div class="col-5">
-            <label class="form-label">Avenida/calle:</label>
-            <input type="text" class="form-control" [defaultValue]="data.AVENIDA">
-        </div>
-        <div class="col-5">
-            <label class="form-label">Edificio/casa:</label>
-            <input type="Text" class="form-control" [defaultValue]="data.EDIFICIO">
-        </div>
-        <div class="col-1">
-            <label class="form-label">Piso:</label>
-            <input type="Text" class="form-control" [defaultValue]="data.PISO">
-        </div>
-    </div>
-    <div class="col-12 mt-3 d-flex justify-content-between">
-        <div class="col-2">
-            <label class="form-label">Correo:</label>
-            <input type="email" class="form-control" disabled="true" [value]="data.EMAIL">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Telf. Local:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.TLFLOCAL">
-        </div>
-        <div class="col-2">
-            <label class="form-label">Telf. Móvil:</label>
-            <input type="text" class="form-control" disabled="true" [value]="data.TLFMOVIL">
-        </div>
-    </div>
-    <div class="col-12 mt-5 d-flex justify-content-end">
-        <div class="col-2">
-            <button type="submit"><label>Guardar</label></button>
-        </div>
-        
-    </div>
-</form>
