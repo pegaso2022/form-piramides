@@ -1,4 +1,7 @@
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { RestService } from './../rest.service';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-edit-client',
@@ -6,47 +9,67 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-client.component.css']
 })
 export class EditClientComponent implements OnInit {
-  
+  document = new FormGroup({
+    p_identification_type : new FormControl(null,Validators.required),
+    p_identification_number: new FormControl(null,Validators.required)
+  });
   data = {
-  "IDPER": 212350,
-  "TIPOID": "V",
-  "NUMID": 11604787,
-  "DVID": "0",
-  "NOMTER": "Miguel Angel",
-  "APETER1": "Castillo",
-  "APETER2": "Hernandez",
-  "NOMTER1": "Miguel",
-  "NOMTER2": "Angel",
-  "APETER": "CASTILLO HERNANDEZ",
-  "CODPAIS": "001",
-  "CODESTADO": "001",
-  "CODCIUDAD": "002",
-  "CODMUNICIPIO": "002",
-  "CODURBANIZACION": "452",
-  "ZIP": "1061",
-  "AVENIDA": "Urb. Los Magallanes Calle Sucre",
-  "EDIFICIO": "Urb. Los Magallanes Calle Sucre",
-  "PISO": "10",
-  "TLFLOCAL": "02124554545",
-  "TLFMOVIL": "54554545454",
-  "EMAIL": "micastillo@segurospiramide.com",
-  "NUMPASAPORTE": "1111111111",
-  "CODCLI": "00000011604787",
-  "SEXO": "M",
-  "FECNAC": "06/12/1974",
-  "EDOCIVIL": "S",
-  "PESO": 91,
-  "ESTATURA": 1.87,
-  "MTOINGMEN": 30000,
-  "INDDOMHO": "S",
-  "CODACT": "0108",
-  "CODPAISORIG": "001",
-  "INDNACIONAL": "N",
+  "IDPER": "",
+  "TIPOID": "",
+  "NUMID": "",
+  "DVID": "",
+  "NOMTER": "",
+  "APETER1": "",
+  "APETER2": "",
+  "NOMTER1": "",
+  "NOMTER2": "",
+  "APETER": "",
+  "CODPAIS": "",
+  "CODESTADO": "",
+  "CODCIUDAD": "",
+  "CODMUNICIPIO": "",
+  "CODURBANIZACION": "",
+  "ZIP": "",
+  "AVENIDA": "",
+  "EDIFICIO": "",
+  "PISO": "",
+  "TLFLOCAL": "",
+  "TLFMOVIL": "",
+  "EMAIL": "",
+  "NUMPASAPORTE": "",
+  "CODCLI": "",
+  "SEXO": "",
+  "FECNAC": "",
+  "EDOCIVIL": "",
+  "PESO": "",
+  "ESTATURA": "1.87",
+  "MTOINGMEN": "",
+  "INDDOMHO": "",
+  "CODACT": "",
+  "CODPAISORIG": "",
+  "INDNACIONAL": "",
   }
     
-  constructor() { }
+  constructor(private http:RestService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { }
+
+  query(){
+    console.log(this.document)
+    if(this.document.invalid){
+      return false;
+    }
+    const url = `${environment.urlService}:4001/servicio_autentificacion`
+    const body = {
+      p_identification_type:this.document.get('p_identification_type')?.value,
+      p_identification_number: this.document.get('p_identification_number')?.value,
+      p_identification_verified: 0
+    }
+    this.http.login(url,body)
+    .subscribe(d=>{
+      localStorage.setItem('auth',d.token)
+    })
+    return false
   }
 
 }

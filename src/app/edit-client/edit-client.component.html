@@ -8,10 +8,10 @@
                     <label class="form-label fw-bold">{{data.CODCLI}}</label>
                 </div>
             </div>
-            <form class="col-6 d-flex justify-content-between align-items-end mt-4">
+            <form class="col-6 d-flex justify-content-between align-items-end mt-4" (submit)="query" [formGroup]="document" autocomplete="off">
                 <div class="col-3 col-lg-2">
                     <label class="form-label">Tipo:</label>
-                    <select name="" id="" class="form-select">
+                    <select name="" id="" class="form-select" formControlName="p_identification_type">
                         <option value="V">V</option>
                         <option value="E">E</option>
                         <option value="G">G</option>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-5">
                     <label class="form-label">Documento:</label>
-                    <input type="number" class="form-control" placeholder="14128945">
+                    <input type="number" class="form-control" placeholder="14128945" formControlName="p_identification_number">
                 </div>
                 <div class="col-4">
                     <button type="submit"><label>Consultar</label></button>

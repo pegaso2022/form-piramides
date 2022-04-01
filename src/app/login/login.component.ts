@@ -1,3 +1,4 @@
+import { environment } from 'src/environments/environment';
 import { RestService } from './../rest.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -13,20 +14,26 @@ export class LoginComponent implements OnInit {
     user : new FormControl(null,Validators.required),
     password : new FormControl(null,Validators.required),
   })
-  constructor(private RestService:RestService) { }
+  constructor(private http:RestService) { }
 
   ngOnInit(): void {
+    
   }
   auth(){
     
     if(this.data.invalid){
       return false;
     }
-    console.log(this.data.get('user')?.value, this.data.get('password')?.value)
+    const url = `${environment.urlService}:4001/servicio_autentificacion`
+    const body = {
+      p_portal_username:this.data.get('user')?.value,
+      p_pwd: this.data.get('password')?.value
+    }
+    this.http.login(url,body)
+    .subscribe(d=>{
+      localStorage.setItem('auth',d.token)
+    })
     return false
   }
 
-  change(e:any){
-    
-  }
 }
