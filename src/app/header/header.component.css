@@ -1,0 +1,18 @@
+header{
+    height: 80px;
+    border-bottom: 2px solid #f8311f;
+}
+header button{
+    height: auto;
+    width: auto;
+}
+header button label{
+    padding: 0.3rem 0.5rem;
+}
+header button label p{
+    font-size: 14px;
+    font-weight: 500;
+}
+header button label img{
+    height: 18px;
+}
