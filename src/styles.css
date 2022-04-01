@@ -46,8 +46,8 @@ input[type=email], input[type=text],input[type=number],input[type=button],input[
 }
 input[type=email]:focus,input[type=password]:focus, input[type=text]:focus, input[type=number]:focus, textarea:focus, input[type=select]:focus, select:focus{
     border-color: #f8311f !important;
-    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075), 0 0 8px rgba(248,49,31, 0.6) !important;
-    outline: none !important;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px rgba(248,49,31, 0.6) !important;
+    outline: 0 none !important;
 }
 button{
     width: 100%;
