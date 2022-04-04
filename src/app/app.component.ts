@@ -1,5 +1,5 @@
+import { AuthService } from './Services/auth.service';
 import { Component } from '@angular/core';
-import { AuthService } from './auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,8 +7,15 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   title = 'form_piramide';
-  public token = '';
+  public token = localStorage.getItem('auth');
   constructor(private auth: AuthService){ 
-    this.token = this.auth.getAuthorizationToken()
   }
+
+  ngOnInit():void{
+    this.auth.getAuthorizationToken()
+    .subscribe({
+      next: res => this.token=res
+    })
+  }
+
 }

@@ -1,7 +1,14 @@
+import { AuthService } from '../Services/auth.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { RestService } from './../rest.service';
+import { RestService } from '../Services/rest.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
+
+export interface profetion{
+  title: string,
+  value: string
+}
+
 
 @Component({
   selector: 'app-edit-client',
@@ -9,6 +16,10 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./edit-client.component.css']
 })
 export class EditClientComponent implements OnInit {
+  profetionList: profetion[]
+  
+  states = []
+
   document = new FormGroup({
     p_identification_type : new FormControl(null,Validators.required),
     p_identification_number: new FormControl(null,Validators.required)
@@ -50,12 +61,33 @@ export class EditClientComponent implements OnInit {
   "INDNACIONAL": "",
   }
     
-  constructor(private http:RestService) { }
+  constructor(private http:RestService, private auth: AuthService) { 
+    this.profetionList = [{title: '...', value:''}]
+   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void { 
+    /* let url = `${environment.urlService}:/4014/`
+    const bodyProfetions = {
+    }
+
+    this.http.req(url, bodyProfetions, {headers: this.auth})
+    .subscribe(res => {
+      console.log(res)
+    }) 
+
+
+    url = `${environment.urlService}:/4014/`
+    const bodyStates = {
+
+    }
+    this.http.req(url, bodyStates, {headers: this.auth})
+    .subscribe(res => {
+      console.log(res)
+    }) */
+    
+  }
 
   query(){
-    console.log(this.document)
     if(this.document.invalid){
       return false;
     }
@@ -66,10 +98,12 @@ export class EditClientComponent implements OnInit {
       p_identification_verified: 0
     }
     this.http.login(url,body)
-    .subscribe(d=>{
-      localStorage.setItem('auth',d.token)
+    .subscribe(res=>{
+      localStorage.setItem('auth',res.token)
     })
     return false
   }
-
+  hola(){
+    console.log('hola')
+  }
 }
