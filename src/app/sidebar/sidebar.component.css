@@ -1,0 +1,34 @@
+.activo a{
+    /*background-color:#f8311f;
+    color: white;
+    */
+    background-color: #f8311f;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;    
+    color: white;
+    pointer-events: none;
+}
+.activo a:hover{
+    border: 2px solid green;
+}
+    
+li a {
+    color: black;
+}
+
+ul > .activo{
+    width: 100%;
+    height: 40px;
+    border: 2px solid #f8311f;
+    border-radius: 7px;
+    padding: 2px;
+    background-color: transparent;
+}
+.activo:hover a{
+    background-color: #ee4f1b;
+}

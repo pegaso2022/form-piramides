@@ -14,11 +14,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService) {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    let authToken=''
-    this.auth.getAuthorizationToken()
-    .subscribe((sus)=>{
-      console.log(Subscription)
+    let authToken='dasjhdkjas'
+    this.auth.getAuthorizationToken().subscribe({
+      next: token =>{ console.log(token) }
     })
+    
     const authReq = request.clone({ setHeaders: { Authorization: authToken } });
     return next.handle(authReq);
   }

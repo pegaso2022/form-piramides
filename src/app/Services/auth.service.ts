@@ -9,8 +9,8 @@ export class AuthService {
   constructor(){ 
     this.token$ = new Subject(); 
   }
-
-  addAuthorizationToken(token:string){
+  
+  addAuthorizationToken(token:any){
     localStorage.setItem('auth', token)
     this.token$.next(token)
   }
